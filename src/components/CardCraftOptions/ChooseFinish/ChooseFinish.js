@@ -37,9 +37,10 @@ const ChooseFinish = ({
     let selectedEl = event.target.value;
    
     if (!isSetDefaultOptions) {
-      console.log(1);
+      
       setDefaultCombination({
         size: "standard",
+        measure:"2.0-3.5",
         corner: "square",
         material: selectedEl,
         qty: "qty-150" 

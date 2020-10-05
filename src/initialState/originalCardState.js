@@ -1,33 +1,18 @@
 import { Map, List } from "immutable";
 
-import StandartCarrdImage from "../../image/business_card-standard.jpg";
-import MooCardImage from "../../image/business_card-moo.jpg";
-import SquareCardImage from "../../image/business_card-square.jpg";
-import ProductImg from "../../image/originaCard.jpg";
-import StandartFullImage from "../../image/businesscard_us-original-square_corners-mattelam.png";
-import MOOFullImage from "../../image/businesscard_us-original-square_corners-glosslam.png";
-import SquareFullImage from "../../image/businesscard_square-original-square_corners-glosslam-square.png";
-import MatteMaterialImg from "../../image/matte-original-card.jpg";
-import GlossMaterialImg from "../../image/gloss-original-card.jpg";
+import StandartCarrdImage from "../image/business_card-standard.jpg";
+import MooCardImage from "../image/business_card-moo.jpg";
+import SquareCardImage from "../image/business_card-square.jpg";
+import ProductImg from "../image/originaCard.jpg";
+import StandartFullImage from "../image/businesscard_us-original-square_corners-mattelam.png";
+import MOOFullImage from "../image/businesscard_us-original-square_corners-glosslam.png";
+import SquareFullImage from "../image/businesscard_square-original-square_corners-glosslam-square.png";
+import MatteMaterialImg from "../image/matte-original-card.jpg";
+import GlossMaterialImg from "../image/gloss-original-card.jpg";
 
 const originalCardState = Map({
-  order: Map({
-    size: "standart",
-    finish: "",
-    corners: "",
-    paper: "",
-  }),
-  mockUps: Map({
-    sizes: List([
-      { name: "Standard", value: "2.0-3.5" },
-      { name: "MOO", value: "2.16-3.3" },
-      { name: "Square", value: "2.56-2.56" },
-    ]),
-  }),
-  paperOption: Map({
-    allPapers: List(["Original", "Cotton", "Super", "Luxe"]),
-    miniPapers: List(["Original", "Luxe"]),
-  }),
+  
+
   productImage: Map({
     isVisibale: false,
     previewImage: ProductImg,
@@ -114,9 +99,9 @@ const originalCardState = Map({
       { id: "qty-200", qty: "200", price: "$0.35", packPrice: "$69.99 " },
       { id: "qty-400", qty: "400", price: "$0.30", packPrice: "$119.00" },
       { id: "qty-600", qty: "600", price: "$0.25", packPrice: "$150.00" },
-      { id: "qty-800", qty: "800", price: "$0.25", packPrice: "$200.00" },
-      { id: "qty-900", qty: "800", price: "$0.25", packPrice: "$200.00" },
-      { id: "qty-1000", qty: "800", price: "$0.25", packPrice: "$200.00" },
+      { id: "qty-800", qty: "800", price: "$0.25", packPrice: "$300.00" },
+      { id: "qty-900", qty: "800", price: "$0.25", packPrice: "$2500.00" },
+      { id: "qty-1000", qty: "800", price: "$0.25", packPrice: "$400.00" },
     ]),
   }),
   selectedElements: Map({
@@ -124,10 +109,11 @@ const originalCardState = Map({
     material: { value: "" },
     corner: { value: "" },
     qty: { value: "qty-150" },
+    paper:{ value: "original", name: "Original"}
   }),
   isSetDefaultOptions: false,
   summaryOrderInfo: Map({
-    startMaking: false,
+   
     tableValues: Map({
       header: "Summary",
       body: List([

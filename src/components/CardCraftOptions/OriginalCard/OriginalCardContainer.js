@@ -10,6 +10,7 @@ import {
   selectSizeHandle,
   selectDefaultCombination
 } from "../../../actions/originalCardsActions";
+import { setCraftOptions } from "../../../actions/orderInformationActions"
 
 const OriginalCardContainer = (props) => {
  
@@ -40,6 +41,7 @@ const mapDispatchToProps = (dispatch) => {
     selectMaterialHandle: (payload) => dispatch(selectMaterialHandle(payload)),
     selectSizeHandle: (payload) => dispatch(selectSizeHandle(payload)),
     setDefaultCombination: (payload) => dispatch(selectDefaultCombination(payload)),
+    setCraftOptions: (payload) => dispatch(setCraftOptions(payload)),
   };
 };
 

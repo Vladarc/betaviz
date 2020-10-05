@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./OriginalCard.scss";
 import ProductOptionsImage from "../ProductOptionsImage/ProductOptionsImage";
 import OptionImgDescription from "../ProductOptionImgDescription/OptionImgDescription";
@@ -19,10 +19,13 @@ const useOriginCardStyles = makeStyles(() => ({
 
 const OriginalCard = (props) => {
   const classes = useOriginCardStyles();
-  
-  // useEffect(() => {
-  //   props.dispatch({ type: "RESET_ORIGINAL_VALUES" });
-  // }, []);
+  const setOrderInfo = () => {
+    const price = props.summaryOrderInfo.tableValues.body[6].value
+    const selectedElements = props.selectedElements
+    props.setCraftOptions({price,selectedElements})
+  }
+
+
   
   return (
     <div className={"row original-card"}>
@@ -71,6 +74,7 @@ const OriginalCard = (props) => {
 
         <div>
           <Button
+            onClick={setOrderInfo}
             component={Link}
             to="cardtemplates"
             variant="contained"

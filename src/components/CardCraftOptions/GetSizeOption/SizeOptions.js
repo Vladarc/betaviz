@@ -41,18 +41,19 @@ const SizeOptions = ({
 }) => {
   const classes = useSizeOptionStyles();
    
-  const changeImageHandler = (idx, id) => {
+  const changeImageHandler = (idx, id, measure) => {
    
     changeImage(idx);
     if (!isSetDefaultOptions) {
       setDefaultCombination({
         size:id,
+        measure,
         corner:"square",
         material:"matte",
         qty: "qty-150" 
       });
     } else {
-      selectSizeHandle(id);
+      selectSizeHandle({id,measure});
     }
   };
 
@@ -72,7 +73,7 @@ const SizeOptions = ({
               control={
                 <Radio
                   className={classes.Radio}
-                  onClick={changeImageHandler.bind(null, idx, btn.id)}
+                  onClick={changeImageHandler.bind(null, idx, btn.id,btn.value)}
                 />
               }
               label={

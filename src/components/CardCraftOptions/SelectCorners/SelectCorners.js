@@ -73,6 +73,7 @@ const SelectCorners = ({
     if (!isSetDefaultOptions) {
       setDefaultCombination({
         size: "standard",
+        measure:"2.0-3.5",
         corner: selected,
         material: "matte",
         qty: "qty-150",
