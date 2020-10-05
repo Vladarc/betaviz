@@ -1,0 +1,33 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.option-card {
+  display: flex;
+  flex-direction: column;
+  border: $border-width solid rgba($color: $black, $alpha: 0.2);
+  border-radius: 5px;
+  padding: 2em 2em;
+
+  @include hover {
+    box-shadow: 0px 0px 18px -4px rgba(0, 0, 0, 0.64);
+  }
+
+  &.active {
+    transition: none;
+    box-shadow: 0 0 0 0.125rem $green;
+  }
+
+  &__wrapper {
+    padding-bottom: 1em;
+  }
+  &__title {
+    font-size: 1.8rem;
+    color: $light-black;
+
+    & > p {
+      margin: 0;
+      font-size: 1.4rem;
+      color: $dark-grey;
+    }
+  }
+}

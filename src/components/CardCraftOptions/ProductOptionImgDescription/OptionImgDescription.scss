@@ -1,0 +1,28 @@
+@import "../../../scss/variables";
+
+.option-img-description {
+  display: flex;
+  justify-content: space-between;
+  margin-top:1em;
+  padding: 0 0.5em;
+  &_item {
+    padding: 0.5em 1em;
+    display: flex;
+    
+  }
+  &_icon {
+    font-size: 2.8rem;
+  }
+
+  &_text{
+    padding-left: 1em;
+
+    & p {
+        font-size: 1.4rem;
+    }
+    &_title{
+        color:$light-black;
+        font-size: 1.8rem;
+    }
+  }
+}

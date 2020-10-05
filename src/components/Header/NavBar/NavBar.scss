@@ -1,0 +1,45 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+
+$custom_border_height: 2px;
+
+.nav {
+  padding-top: 20px;
+  &__wrapper {
+    position: relative;
+    z-index: 25;
+    background-color: $white;
+  }
+}
+.navigation-menu {
+  display: flex;
+  justify-content: center;
+  &__link {
+    position: relative;
+    display: inline-flex;
+    padding: 0.6em 1em;
+    cursor: pointer;
+    &::after {
+      content: "";
+      height: $custom_border_height;
+      will-change: width;
+      border-radius: calc(#{$custom_border_height} - 1.5px);
+
+      width: 0%;
+      background-color: $royalblue;
+      z-index: 10;
+      @include posA($top: auto, $left: 50%, $delta_x: -50%, $delta_y: -50%);
+      bottom: calc(-1 * #{$custom_border_height});
+      transition: width 0.3s ease-in;
+    }
+
+    &.isVisible::after {
+      transition: width 0.3s ease-in;
+      width: 100%;
+    }
+  }
+
+  &__item {
+    font-size: 1.6rem;
+  }
+}
