@@ -1,0 +1,58 @@
+@import "../../../scss/mixins";
+
+.hover {
+  &-select {
+    position: relative;
+    cursor: pointer;
+    
+  
+  }
+
+  &-dropdown {
+    position: absolute;
+    top: calc(100% + 10px + 50%);
+    box-shadow: 0 0.1875rem 0.625rem 0 rgba(75, 89, 109, 0.3);
+    border-radius: 10px;
+    left: 50%;
+    transform: translate(-50%, -200%) ;
+    min-width: 260px;
+ 
+    
+    will-change: transform;
+    opacity: 0;
+    transition: transform 0.3s ease-out , opacity 0.3s ease-out;
+    &.active {
+      transition: transform 0.3s ease-out , opacity 0.3s ease-out;
+      transform: translate(-50%, -20%) ;
+      opacity: 1;
+      z-index: 30;
+     
+    
+    }
+  }
+  &-dropdown_content {
+    background-color: #fff;
+    padding: 15px 10px;
+  }
+}
+.select-lang {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  &_item {
+    padding: 10px 0;
+
+    @include hover {
+      box-shadow: inset 7px 14px 117px -80px rgba(0, 0, 0, 1);
+    }
+  }
+  &__icon-wraper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+  }
+  &__text-wraper {
+    width: 75%;
+  }
+}
