@@ -39,6 +39,7 @@ const QuantityTable = ({
     if (!isSetDefaultOptions) {
       setDefaultCombination({
         size:"standard",
+        measure:"2.0-3.5",
         corner:"square",
         material:"matte",
         qty: id 

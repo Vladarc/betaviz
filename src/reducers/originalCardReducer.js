@@ -17,7 +17,7 @@ const findProps = (state, path, action) => {
   const foundElement = state
     .getIn(path)
     .toJSON()
-    .find((el) => el.id === action.payload);
+    .find((el) => el.id === action);
 
   return foundElement;
 };
@@ -36,7 +36,7 @@ export const OriginalCardReducer = (
       ]);
 
       let setPrewievImageOfCard = state
-        .setIn(["productImage", "previewImage"], [imageForReplace])
+        .setIn(["productImage", "previewImage"], imageForReplace)
         .setIn(["productImage", "classes"], "product-image-wrapper_prewiev-img")
         .setIn(["productImage", "isVisibale"], true);
       return setPrewievImageOfCard;
@@ -47,6 +47,7 @@ export const OriginalCardReducer = (
         material: { value: "" },
         corner: { value: "" },
         qty: { value: "qty-150" },
+        price: {}
       });
       const resetState = state
         .setIn(["productImage"], {
@@ -74,7 +75,7 @@ export const OriginalCardReducer = (
       const { qty, packPrice } = findProps(
         state,
         ["quanTityTable", "tableBody"],
-        action
+        action.payload
       );
       const selectedQty = state
         .setIn(["selectedElements", "qty"], { value: action.payload })
@@ -90,7 +91,7 @@ export const OriginalCardReducer = (
       const { title: cornerTitle } = findProps(
         state,
         ["chooseCorners"],
-        action
+        action.payload
       );
       const selectedCorner = state
         .setIn(["selectedElements", "corner"], { value: action.payload })
@@ -104,7 +105,7 @@ export const OriginalCardReducer = (
       const { title: materialtitle } = findProps(
         state,
         ["chooseMaterial"],
-        action
+        action.payload
       );
       const selectedMaterial = state
         .setIn(["selectedElements", "material"], { value: action.payload })
@@ -118,33 +119,45 @@ export const OriginalCardReducer = (
       const { title: sizeTitle } = findProps(
         state,
         ["sizeOption", "radioBtn"],
-        action
+        action.payload.id
       );
       const selectedSize = state
         .setIn(["selectedElements", "size"], {
-          value: action.payload,
+          value: action.payload.id, measure:action.payload.measure
         })
-        .setIn(["order", "size"], action.payload)
         .setIn(
           ["summaryOrderInfo", "tableValues", "body", 0, "value"],
           sizeTitle
         );
+
       return selectedSize;
 
     case SELECT_DEFAULT_COMBINATION:
-      let getPriceAndQty = state
-        .getIn(["quanTityTable", "tableBody"])
-        .toJSON()
-        .find((el) => el.id === action.payload.qty);
+      let getPriceAndQty = findProps(
+        state,
+        ["quanTityTable", "tableBody"],
+        action.payload.qty
+      );
+      let getImageForSelectedSize = findProps(
+        state,
+        ["sizeOption", "radioBtn"],
+        action.payload.size
+      );
 
       const defaultCombination = state
-        .setIn(["selectedElements", "size"], { value: action.payload.size })
+        .setIn(["selectedElements", "size"], { value: action.payload.size,measure:action.payload.measure })
+        .setIn(
+          ["productImage", "previewImage"],
+          getImageForSelectedSize.previewImage
+        )
+        .setIn(["productImage", "classes"], "product-image-wrapper_prewiev-img")
+        .setIn(["productImage", "isVisibale"], true)
         .setIn(["selectedElements", "material"], {
           value: action.payload.material,
         })
         .setIn(["selectedElements", "corner"], { value: action.payload.corner })
         .setIn(["selectedElements", "qty"], { value: action.payload.qty })
-        .setIn(["order", "size"], action.payload.size)
+
         .setIn(
           ["summaryOrderInfo", "tableValues", "body"],
           List([
