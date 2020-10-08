@@ -1,5 +1,5 @@
 import React from "react";
-import "./OptionImgDescription.scss";
+import "../../../styles/OptionImgDescription.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGem,faPrint } from "@fortawesome/free-solid-svg-icons";
 

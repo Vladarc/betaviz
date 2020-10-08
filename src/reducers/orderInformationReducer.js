@@ -13,7 +13,8 @@ export const orderInformationReducer = (
     case SET_CRAFT_ORDER_OPTIONS:
       return state
         .set("order", action.payload.selectedElements)
-        .set("price", action.payload.price);
+        .set("price", action.payload.price)
+        .set('optionsSelected',true);
 
     case SET_NEW_ORDER_SIZE:
       return state.setIn(["order", "size"], action.payload);

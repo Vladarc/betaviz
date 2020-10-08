@@ -1,5 +1,5 @@
 import React from "react";
-import "./OriginalCard.scss";
+import "../../../styles/OriginalCard.scss";
 import ProductOptionsImage from "../ProductOptionsImage/ProductOptionsImage";
 import OptionImgDescription from "../ProductOptionImgDescription/OptionImgDescription";
 import CardFeatured from "./OriginalCardFeatured/OriginalCardFeatured";

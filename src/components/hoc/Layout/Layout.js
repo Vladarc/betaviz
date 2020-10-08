@@ -1,5 +1,5 @@
 import React from "react";
-import "./Layout.scss";
+import "../../../styles/Layout.scss";
 import { connect } from "react-redux";
 import { toJS } from "../../hoc/toJs/toJs";
 import { Container, makeStyles } from "@material-ui/core";
@@ -15,11 +15,13 @@ const Layout = (props) => {
   return (
     <Container maxWidth="lg">
       <main>
-        <Backdrop
-          open={props.isBackDropVisible}
-          className={classes.Backdrop}
-          transitionDuration={0.3}
-        />
+        {props.isBackDropVisible ? (
+          <Backdrop
+            open={props.isBackDropVisible}
+            className={classes.Backdrop}
+            transitionDuration={0.3}
+          />
+        ) : null}
 
         {props.children}
       </main>

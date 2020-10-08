@@ -1,5 +1,5 @@
 import React from "react";
-import "./HoverSelect.scss";
+import "../../../styles/HoverSelect.scss";
 
 
 const HoverSelect = props => {

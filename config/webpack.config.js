@@ -451,9 +451,9 @@ module.exports = function(webpackEnv) {
                 },
               }),
             },
-            // Opt-in support for SASS (using .scss or .sass extensions).
+            // Opt-in support for SASS (using .styles or .sass extensions).
             // By default we support SASS Modules with the
-            // extensions .module.scss or .module.sass
+            // extensions .module.styles or .module.sass
             {
               test: sassRegex,
               exclude: sassModuleRegex,
@@ -471,7 +471,7 @@ module.exports = function(webpackEnv) {
               sideEffects: true,
             },
             // Adds support for CSS Modules, but using SASS
-            // using the extension .module.scss or .module.sass
+            // using the extension .module.styles or .module.sass
             {
               test: sassModuleRegex,
               use: getStyleLoaders(

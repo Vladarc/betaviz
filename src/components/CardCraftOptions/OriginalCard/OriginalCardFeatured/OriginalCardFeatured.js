@@ -1,5 +1,5 @@
 import React from "react";
-import "./OriginalCardFeatured.scss";
+import "../../../../styles/OriginalCardFeatured.scss";
 import {
   Typography,
   makeStyles,

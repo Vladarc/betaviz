@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ProductOptionsImage.scss";
+import "../../../styles/ProductOptionsImage.scss";
 
 
 const ProductOptionsImage = ({ productImg }) => {

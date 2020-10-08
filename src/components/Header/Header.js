@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.scss";
+import "../../styles/Header.scss";
 import Logo from "../../image/logo.jpg";
 import { Image } from "../UI/Image/Image";
 import Container from "@material-ui/core/Container";

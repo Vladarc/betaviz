@@ -1,5 +1,5 @@
 import React from "react";
-import "./NavBar.scss";
+import "../../../styles/NavBar.scss";
 import { UL } from "../../UI/Ulwrap/Ulcontainer";
 import { Ulitem } from "../../UI/List/ListUI";
 import NavBarMenu from "./NavBarMenu/NavBarMenu";
