@@ -9,18 +9,14 @@ import {
   SELECT_DEFAULT_COMBINATION,
   RESET_ORIGINAL_VALUES,
 } from "../constants/originalCardConstants";
+import { capitalize } from "../Handlers/CapitalizeFunc"
+import { findProps } from "../Handlers/findPropsHandle"
+
 
 import ProductImg from "../image/originaCard.jpg";
 
-const capitalize = (word) => word.replace(word[0], word[0].toUpperCase());
-const findProps = (state, path, action) => {
-  const foundElement = state
-    .getIn(path)
-    .toJSON()
-    .find((el) => el.id === action);
 
-  return foundElement;
-};
+
 
 export const OriginalCardReducer = (
   state = initialState.originalCard,

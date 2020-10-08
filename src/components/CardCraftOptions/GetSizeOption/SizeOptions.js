@@ -7,7 +7,7 @@ import {
   FormControlLabel,
 } from "@material-ui/core";
 import { RadioBtnLabel } from "../RadioBtnLabel/RadioBtnLabel";
-import "./SizeOptions.scss";
+import "../../../styles/SizeOptions.scss";
 
 const useSizeOptionStyles = makeStyles(() => ({
   sizeOption: {

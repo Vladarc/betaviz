@@ -9,7 +9,7 @@ import {
 import { faSquare } from "@fortawesome/free-regular-svg-icons";
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./SelectCorners.scss";
+import "../../../styles/SelectCorners.scss";
 const useSelectCornersStyles = makeStyles(() => ({
   title: {
     fontSize: "2.1rem",

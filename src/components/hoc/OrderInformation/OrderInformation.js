@@ -6,8 +6,6 @@ const OrderInformation = (props) => {
   return <>{props.children}</>;
 };
 
-const mapStatetoProps = (state) => {
-  return {};
-};
 
-export default connect(mapStatetoProps)(OrderInformation);
+
+export default connect(null)(OrderInformation);

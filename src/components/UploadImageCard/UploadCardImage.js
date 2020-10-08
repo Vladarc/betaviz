@@ -1,5 +1,5 @@
 import React from "react";
-import "./UploadCardImage.scss";
+import "../../styles/UploadCardImage.scss";
 
 import { Image } from "../UI/Image/Image.jsx";
 import { NavLink } from "react-router-dom";
@@ -10,7 +10,7 @@ const UploadCardImage = (props) => {
   return (
 
       <div className={"upload-design"}>
-        <NavLink className={"upload-design__wrraper"} to="/cardtemplates">
+        <NavLink className={"upload-design__wrraper"} to="/card_builder" >
           <Image src={UploadImage} className={"upload-design__image"} />
         </NavLink>
 
@@ -20,7 +20,7 @@ const UploadCardImage = (props) => {
         </div>
 
         <div className={"upload-design__footer"}>
-          <NavLink className={"upload-design__link"} to="/cardtemplates">
+          <NavLink className={"upload-design__link"} to="/card_builder">
             Upload my design
           </NavLink>
         </div>

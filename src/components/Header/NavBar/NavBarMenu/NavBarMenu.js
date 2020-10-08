@@ -1,5 +1,5 @@
 import React from "react";
-import "./NavBarMenu.scss";
+import "../../../../styles/NavBarMenu.scss";
 import { UL } from "../../../UI/Ulwrap/Ulcontainer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
