@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/betaviz/static/css/main.abdc5d7f.chunk.css",
+    "main.js": "/betaviz/static/js/main.2295db71.chunk.js",
+    "main.js.map": "/betaviz/static/js/main.2295db71.chunk.js.map",
+    "runtime-main.js": "/betaviz/static/js/runtime-main.37416524.js",
+    "runtime-main.js.map": "/betaviz/static/js/runtime-main.37416524.js.map",
+    "static/js/2.a97035aa.chunk.js": "/betaviz/static/js/2.a97035aa.chunk.js",
+    "static/js/2.a97035aa.chunk.js.map": "/betaviz/static/js/2.a97035aa.chunk.js.map",
+    "index.html": "/betaviz/index.html",
+    "precache-manifest.bdf93f62a85d349887150f929a3dc278.js": "/betaviz/precache-manifest.bdf93f62a85d349887150f929a3dc278.js",
+    "service-worker.js": "/betaviz/service-worker.js",
+    "static/css/main.abdc5d7f.chunk.css.map": "/betaviz/static/css/main.abdc5d7f.chunk.css.map",
+    "static/js/2.a97035aa.chunk.js.LICENSE.txt": "/betaviz/static/js/2.a97035aa.chunk.js.LICENSE.txt",
+    "static/media/businesscard_square-original-square_corners-glosslam-square.png": "/betaviz/static/media/businesscard_square-original-square_corners-glosslam-square.b42ee0d6.png",
+    "static/media/businesscard_us-original-square_corners-glosslam.png": "/betaviz/static/media/businesscard_us-original-square_corners-glosslam.73d77e57.png",
+    "static/media/businesscard_us-original-square_corners-mattelam.png": "/betaviz/static/media/businesscard_us-original-square_corners-mattelam.19887db3.png",
+    "static/media/gloss-original-card.jpg": "/betaviz/static/media/gloss-original-card.48f147ee.jpg",
+    "static/media/logo.jpg": "/betaviz/static/media/logo.5c49ac2f.jpg",
+    "static/media/originaCard.jpg": "/betaviz/static/media/originaCard.22e5d0e2.jpg",
+    "static/media/upload-card.jpg": "/betaviz/static/media/upload-card.97af6ff7.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.37416524.js",
+    "static/js/2.a97035aa.chunk.js",
+    "static/css/main.abdc5d7f.chunk.css",
+    "static/js/main.2295db71.chunk.js"
+  ]
+}
