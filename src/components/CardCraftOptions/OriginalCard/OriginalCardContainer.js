@@ -1,53 +1,53 @@
 import React from "react";
 import OriginalCard from "./OriginalCard";
-import { toJS } from "../../hoc/toJs/toJs";
-import { connect } from "react-redux";
+import {toJS} from "../../hoc/toJs/toJs";
+import {connect} from "react-redux";
 import {
-  changeImage,
-  selectRowHandle,
-  selectCornerHandle,
-  selectMaterialHandle,
-  selectSizeHandle,
-  selectDefaultCombination
+    changeImage,
+    selectRowHandle,
+    selectCornerHandle,
+    selectMaterialHandle,
+    selectSizeHandle,
+    selectDefaultCombination
 } from "../../../actions/originalCardsActions";
-import { setCraftOptions } from "../../../actions/orderInformationActions"
+import {setCraftOptions} from "../../../actions/orderInformationActions"
+import {Container} from "@material-ui/core";
 
 const OriginalCardContainer = (props) => {
- 
-  return <OriginalCard {...props} />;
+    return <Container maxWidth="lg"><OriginalCard {...props} /></Container>;
 };
 const mapStateToProps = (state) => {
-  return {
-    productImg: state.getIn(["OriginalCardReducer", "productImage"]),
-    cardFeatured: state.getIn(["OriginalCardReducer", "cardFeatured"]),
-    sizeOption: state.getIn(["OriginalCardReducer", "sizeOption"]),
-    chooseMaterial: state.getIn(["OriginalCardReducer", "chooseMaterial"]),
-    chooseCorners: state.getIn(["OriginalCardReducer", "chooseCorners"]),
-    quanTityTableData: state.getIn(["OriginalCardReducer", "quanTityTable"]),
-    selectedElements: state.getIn(["OriginalCardReducer", "selectedElements"]),
-    summaryOrderInfo: state.getIn(["OriginalCardReducer", "summaryOrderInfo"]),
-    isSetDefaultOptions: state.getIn(["OriginalCardReducer", "isSetDefaultOptions"]),
+    return {
+        productImg: state.getIn(["originalCardReducer", "productImage"]),
+        cardFeatured: state.getIn(["originalCardReducer", "cardFeatured"]),
+        sizeOption: state.getIn(["originalCardReducer", "sizeOption"]),
+        chooseMaterial: state.getIn(["originalCardReducer", "chooseMaterial"]),
+        chooseCorners: state.getIn(["originalCardReducer", "chooseCorners"]),
+        quanTityTableData: state.getIn(["originalCardReducer", "quanTityTable"]),
+        selectedElements: state.getIn(["originalCardReducer", "selectedElements"]),
+        summaryOrderInfo: state.getIn(["originalCardReducer", "summaryOrderInfo"]),
+        isSetDefaultOptions: state.getIn(["originalCardReducer", "isSetDefaultOptions"]),
 
-  };
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    dispatch,
+    return {
+        dispatch,
 
-    changeImage: (payload) => dispatch(changeImage(payload)),
-    selectRowHandle: (payload) => dispatch(selectRowHandle(payload)),
-    selectCornerHandle: (payload) => dispatch(selectCornerHandle(payload)),
-    selectMaterialHandle: (payload) => dispatch(selectMaterialHandle(payload)),
-    selectSizeHandle: (payload) => dispatch(selectSizeHandle(payload)),
-    setDefaultCombination: (payload) => dispatch(selectDefaultCombination(payload)),
-    setCraftOptions: (payload) => dispatch(setCraftOptions(payload)),
-  };
+        changeImage: (payload) => dispatch(changeImage(payload)),
+        selectRowHandle: (payload) => dispatch(selectRowHandle(payload)),
+        selectCornerHandle: (payload) => dispatch(selectCornerHandle(payload)),
+        selectMaterialHandle: (payload) => dispatch(selectMaterialHandle(payload)),
+        selectSizeHandle: (payload) => dispatch(selectSizeHandle(payload)),
+        setDefaultCombination: (payload) => dispatch(selectDefaultCombination(payload)),
+        setCraftOptions: (payload) => dispatch(setCraftOptions(payload)),
+    };
 };
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(toJS(OriginalCardContainer));
 
 

@@ -1,0 +1,1 @@
+import React from "react";import PageWrapper from "../components/hoc/MainContentWrraper/MainContentWrraper"function generatePageWrapper(initProps) {    return props => <PageWrapper {...initProps} {...props} />;}export default generatePageWrapper;

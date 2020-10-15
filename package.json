@@ -1,7 +1,6 @@
 {
   "name": "moo",
   "version": "0.1.0",
-  "homepage":"http://solodukha-aleksei.com/betaviz",
   "private": true,
   "dependencies": {
     "@babel/core": "7.9.0",
@@ -76,7 +75,7 @@
     "webpack-manifest-plugin": "2.2.0",
     "with-immutable-props-to-js": "^2.1.0",
     "workbox-webpack-plugin": "4.3.1",
-    "history": "latest"
+    "React": "latest"
   },
   "scripts": {
     "start": "node scripts/start.js",

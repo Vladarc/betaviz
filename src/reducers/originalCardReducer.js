@@ -9,8 +9,8 @@ import {
   SELECT_DEFAULT_COMBINATION,
   RESET_ORIGINAL_VALUES,
 } from "../constants/originalCardConstants";
-import { capitalize } from "../Handlers/CapitalizeFunc"
-import { findProps } from "../Handlers/findPropsHandle"
+import { capitalize } from "../handlers/сapitalizeFunc.js"
+import { findProps } from "../handlers/findPropsHandle"
 
 
 import ProductImg from "../image/originaCard.jpg";
@@ -18,7 +18,8 @@ import ProductImg from "../image/originaCard.jpg";
 
 
 
-export const OriginalCardReducer = (
+export const originalCardReducer
+ = (
   state = initialState.originalCard,
   action
 ) => {

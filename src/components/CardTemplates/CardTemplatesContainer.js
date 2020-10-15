@@ -4,8 +4,10 @@ import {connect} from "react-redux";
 
 import {CardTemplates} from "./CardTemplates";
 import {setNewSize, setNewPaperValue} from "../../actions/orderInformationActions"
+import {Container} from "@material-ui/core";
 
-const CardTemplatesContainer = (props) => <CardTemplates {...props} />;
+
+const CardTemplatesContainer = (props) => <Container maxWidth="lg"> <CardTemplates {...props} /> </Container>;
 
 const mapStateToProps = (state) => {
     return {

@@ -1,0 +1,1 @@
+import { Map, List } from "immutable";const UploadCardBuilderState = Map({});export default  UploadCardBuilderState;

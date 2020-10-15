@@ -4,20 +4,17 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 
-import {Router} from "react-router-dom";
-import {history} from "./Routes/history"
+import { BrowserRouter as Router } from "react-router-dom";
+
 
 import {Provider} from "react-redux";
-import {createStore} from 'redux';
-import {rootReducers} from "./reducers/index"
+import {store} from "./store";
 
-
-const store = createStore(rootReducers);
 
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={history}>
+        <Router basename={"/"} >
             <App/>
         </Router>
     </Provider>,

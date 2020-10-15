@@ -1,0 +1,1 @@
+import {initialState} from "../initialState/index";import {Map, List} from "immutable";export const uploadCardBuilderReducer    = (state = initialState.uploadCardBuilder, action) => {    switch (action.type) {        default:            return state;    }};
