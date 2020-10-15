@@ -1,0 +1,1 @@
+import React from "react";const UploadSidesMenu = (props) => {    return (        <div >            <div>               Upload Component            </div>        </div>    );};export default UploadSidesMenu;

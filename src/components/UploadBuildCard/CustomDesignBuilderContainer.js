@@ -10,7 +10,9 @@ const CustomDesignBuilderContainer = props => {
 };
 
 const mapStateToProps = state => {
-    return {};
+    return {
+        step:state.getIn(['uploadCardBuilderReducer','step'])
+    };
 };
 
 const mapDispatchToProps = dispatch => {
