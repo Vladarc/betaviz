@@ -5,6 +5,7 @@ import { Ulitem } from "../../UI/List/ListUI";
 import NavBarMenu from "./NavBarMenu/NavBarMenu";
 
 const NavBar = (props) => {
+
   const openNavBarMenuHandler = (index, event) => {
     props.toggleNavBarMenuHandler({
       index,

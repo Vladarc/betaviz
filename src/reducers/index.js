@@ -1,15 +1,32 @@
-import { HeaderReducer } from "./headerReducer";
-import { NavBarReducer } from "./navBarReducer";
-import { OriginalCardReducer } from "./originalCardReducer"
-import { orderInformationReducer } from "./orderInformationReducer"
-import { cardTemplatesReducer } from "./cardTemplatesReducer"
-import { combineReducers } from "redux-immutable";
+import {combineReducers} from "redux-immutable";
+
+import {
+    headerReducer
+} from "./headerReducer";
+
+import {
+    navBarReducer
+} from "./navBarReducer";
+
+import {
+    originalCardReducer
+} from "./originalCardReducer";
+
+import {orderInformationReducer} from "./orderInformationReducer"
+import {cardTemplatesReducer} from "./cardTemplatesReducer"
+import {
+    uploadCardBuilderReducer
+} from "./uploadCardBuilderReducer";
+
 
 export const rootReducers = combineReducers({
-  HeaderReducer,
-  NavBarReducer,
-  OriginalCardReducer,
-  orderInformationReducer,
-  cardTemplatesReducer
+    headerReducer,
+    navBarReducer,
+    originalCardReducer,
+    orderInformationReducer,
+    cardTemplatesReducer,
+    uploadCardBuilderReducer
+
+
 });
 

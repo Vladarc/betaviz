@@ -2,7 +2,8 @@ import { initialState } from "../initialState/index";
 import { TOGGL_SUB_MENU } from "../constants/navBarConstants"
 
 
-export const NavBarReducer = (state = initialState.navBar, action) => {
+export const navBarReducer
+ = (state = initialState.navBar, action) => {
   switch (action.type) {
     case TOGGL_SUB_MENU:
       let subMenu = state

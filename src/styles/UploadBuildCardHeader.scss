@@ -1,0 +1,1 @@
+@import "./mixins";@import "./variables";.product-name{  display: flex;  align-items: center;  max-height: 200px;  &__field{    outline: none;    display: inline-flex;    background-color:$white;    border:$border-width solid $light-grey;    height: 100%;  }}

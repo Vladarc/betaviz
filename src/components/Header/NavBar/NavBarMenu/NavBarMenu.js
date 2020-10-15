@@ -8,7 +8,7 @@ const NavBarMenu = (props) => {
   const mainClassses = ["nav-menu", props.data.isActive ? "isOpened" : ""];
   const activeClassesLi = ["nav-main__item"];
   const activeClassesIcon = ["nav-main__icon"];
-  
+
   return (
     <div className={mainClassses.join(" ")}>
       <div className={"grid-menu"}>

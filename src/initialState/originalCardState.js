@@ -11,7 +11,7 @@ import MatteMaterialImg from "../image/matte-original-card.jpg";
 import GlossMaterialImg from "../image/gloss-original-card.jpg";
 
 const originalCardState = Map({
-  
+
 
   productImage: Map({
     isVisibale: false,
@@ -92,6 +92,7 @@ const originalCardState = Map({
   ]),
   quanTityTable: Map({
     header: List(["Quantity", "Price per card", "Pack price"]),
+
     tableBody: List([
       { id: "qty-50", qty: "50", price: "$0.40", packPrice: "$19.99" },
       { id: "qty-100", qty: "100", price: "$0.40", packPrice: "$39.98" },

@@ -3,23 +3,26 @@ import "../../styles/Header.scss";
 import Logo from "../../image/logo.jpg";
 import { Image } from "../UI/Image/Image";
 import Container from "@material-ui/core/Container";
-import { connect } from "react-redux";
-import { toJS } from "../hoc/toJs/toJs";
 import { Ulitem } from "../UI/List/ListUI";
 import { UL } from "../UI/Ulwrap/Ulcontainer";
 import { SerchInput } from "../Search/SearchInput";
-import { hoverTogglHandler } from "../../actions/headerActions";
 import NavBar from "./NavBar/NavBarContainer";
 import { Link } from "react-router-dom";
+import {hoverTogglHandler} from "../../actions/headerActions";
+
+
+
+
 const Header = ({
   hoverTogglHandler,
   headerLinks,
   languagesList,
   langSelectClasses,
+
 }) => {
   const OpenListHoverHandler = () => hoverTogglHandler(true);
   const CloseListHoverHandler = () => hoverTogglHandler(false);
- 
+
 
   return (
     <header className={"header"}>
@@ -74,20 +77,5 @@ const Header = ({
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    headerLinks: state.getIn(["HeaderReducer", "headerLinks"]),
-    languagesList: state.getIn(["HeaderReducer", "language"]),
-    langSelectClasses: state.getIn(["HeaderReducer", "languageSelectClasses"]),
-  };
-};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    dispatch,
-    hoverTogglHandler: (payload) => dispatch(hoverTogglHandler(payload)),
-  };
-};
-
-const ContainerHeader = toJS(Header);
-export default connect(mapStateToProps, mapDispatchToProps)(ContainerHeader);
+export default Header

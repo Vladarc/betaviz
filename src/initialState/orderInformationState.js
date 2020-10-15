@@ -4,7 +4,7 @@ const orderInformationState = Map({
   order: Map({
     size:{value: 'moo' }
   }),
-  optionsSelected:false,
+  optionsSelected:true,
   price: "",
 });
 

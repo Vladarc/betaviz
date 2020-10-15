@@ -7,8 +7,8 @@ const NavBarContainer = props => <NavBar {...props} />;
 
 const mapStateToProps = state => {
   return {
-    links:state.getIn(["NavBarReducer","navBarLinks"]),
-   
+    links:state.getIn(["navBarReducer","navBarLinks"]),
+
   };
 };
 

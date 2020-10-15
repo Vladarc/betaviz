@@ -225,7 +225,11 @@ button:-moz-focusring,
 /**
  * Correct the padding in Firefox.
  */
-
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
