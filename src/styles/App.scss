@@ -9,10 +9,17 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+
 }
+.body{
+  &--card-builder{
+    max-height: 100vh;
+    overflow: hidden;
+  }
+}
+
 img{
     max-width: 100%;
-   
 }
 ul {
   margin: 0;

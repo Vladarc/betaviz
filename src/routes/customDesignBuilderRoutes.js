@@ -6,7 +6,8 @@ export default {
         path: "/card_builder",
         component: generatePageWrapper({
             component: CustomDesignBuilderContainer,
-            isVisibleHeader:false
+            isVisibleHeader:false,
+
         })
     }
 }
