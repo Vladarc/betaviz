@@ -1,1 +1,11 @@
-import React from "react";const UploadSidesMenu = (props) => {    return (        <div >            <div>               Upload Component            </div>        </div>    );};export default UploadSidesMenu;
+import React from 'react';
+import UploadInputImagesWrraper from './UploadInputImagesWrraper';
+
+const UploadSidesMenu = (props) => (
+  <div>
+    <div>Upload Component</div>
+
+    <UploadInputImagesWrraper {...props} />
+  </div>
+);
+export default UploadSidesMenu;

@@ -1,38 +1,40 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Typography,
   makeStyles,
   Radio,
   RadioGroup,
   FormControlLabel,
-} from "@material-ui/core";
-import { faSquare } from "@fortawesome/free-regular-svg-icons";
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../../../styles/SelectCorners.scss";
+} from '@material-ui/core';
+import { faSquare, faCircle } from '@fortawesome/free-regular-svg-icons';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../../../styles/SelectCorners.scss';
+
 const useSelectCornersStyles = makeStyles(() => ({
   title: {
-    fontSize: "2.1rem",
+    fontSize: '2.1rem',
   },
   Radio: {
-    display: "none",
+    display: 'none',
   },
   RadioGroup: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
 
-    margin: "2em 0",
+    margin: '2em 0',
   },
   FormControlLabel: {
     marginLeft: 0,
     marginRight: 0,
-    flexBasis: "47.666%",
-    "& span": {
-      width: "100%",
+    flexBasis: '47.666%',
+    '& span': {
+      width: '100%',
     },
   },
   LabelTitle: {
-    fontSize: "1.8rem",
+    fontSize: '1.8rem',
   },
 }));
 
@@ -43,14 +45,14 @@ const RadioBtnLabelWithIcon = ({
   description,
   isActive,
 }) => {
-  const cls = ["corners-lable", isActive ? "active" : ""];
+  const cls = ['corners-lable', isActive ? 'active' : ''];
   return (
-    <div className={cls.join(" ")}>
-      <div className={"corners-lable__text"}>
+    <div className={cls.join(' ')}>
+      <div className="corners-lable__text">
         <Typography className={LabelTitle}>{title}</Typography>
-        <span className={"corners-lable__description"}>{description}</span>
+        <span className="corners-lable__description">{description}</span>
       </div>
-      <div className={"corners-lable__icon"}>
+      <div className="corners-lable__icon">
         <FontAwesomeIcon icon={icon} />
       </div>
     </div>
@@ -68,18 +70,17 @@ const SelectCorners = ({
   const [square, rounded] = label;
 
   const setCornarsCardsHandler = (event) => {
-    let selected = event.target.value.toLowerCase();
-   
+    const selected = event.target.value.toLowerCase();
+
     if (!isSetDefaultOptions) {
       setDefaultCombination({
-        size: "standard",
-        measure:"2.0-3.5",
+        size: 'standard',
+        measure: '2.0-3.5',
         corner: selected,
-        material: "matte",
-        qty: "qty-150",
+        material: 'matte',
+        qty: 'qty-150',
       });
     } else {
-      
       selectCornerHandle(selected);
     }
   };
@@ -125,5 +126,18 @@ const SelectCorners = ({
     </div>
   );
 };
-
+RadioBtnLabelWithIcon.propTypes = {
+  icon: PropTypes.object,
+  title: PropTypes.string,
+  LabelTitle: PropTypes.string,
+  description: PropTypes.string,
+  isActive: PropTypes.bool,
+};
+SelectCorners.propTypes = {
+  label: PropTypes.array,
+  selectCornerHandle: PropTypes.func,
+  selectedElementsCorner: PropTypes.object,
+  setDefaultCombination: PropTypes.func,
+  isSetDefaultOptions: PropTypes.bool,
+};
 export default SelectCorners;
