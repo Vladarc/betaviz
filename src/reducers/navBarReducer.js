@@ -1,24 +1,19 @@
-import { initialState } from "../initialState/index";
-import { TOGGL_SUB_MENU } from "../constants/navBarConstants"
+import { initialState } from '../initialState/index';
+import { TOGGL_SUB_MENU } from '../constants/navBarConstants';
 
-
-export const navBarReducer
- = (state = initialState.navBar, action) => {
+export const navBarReducer = (state = initialState.navBar, action) => {
   switch (action.type) {
     case TOGGL_SUB_MENU:
-      let subMenu = state
+      return state
         .setIn(
-          ["navBarLinks", action.payload.index, "subMenu", "isActive"],
+          ['navBarLinks', action.payload.index, 'subMenu', 'isActive'],
           action.payload.isOpened
         )
         .setIn(
-          ["navBarLinks", action.payload.index, "isVisible"],
+          ['navBarLinks', action.payload.index, 'isVisible'],
           action.payload.isOpened
         )
-        .setIn(["isBackDropVisible"], action.payload.isOpened);
-
-      return subMenu;
-
+        .setIn(['isBackDropVisible'], action.payload.isOpened);
     default:
       return state;
   }

@@ -1,33 +1,34 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Typography,
   makeStyles,
   Radio,
   RadioGroup,
   FormControlLabel,
-} from "@material-ui/core";
-import { RadioBtnLabel } from "../RadioBtnLabel/RadioBtnLabel";
-import "../../../styles/SizeOptions.scss";
+} from '@material-ui/core';
+import { RadioBtnLabel } from '../RadioBtnLabel/RadioBtnLabel';
+import '../../../styles/SizeOptions.scss';
 
 const useSizeOptionStyles = makeStyles(() => ({
   sizeOption: {
-    margin: "2em 0",
+    margin: '2em 0',
   },
   title: {
-    fontSize: "2.1rem",
+    fontSize: '2.1rem',
   },
   Radio: {
-    display: "none",
+    display: 'none',
   },
   RadioGroup: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    margin: "2em 0",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: '2em 0',
   },
   FormControlLabel: {
     marginLeft: 0,
     marginRight: 0,
-    flexBasis: "32.333%",
+    flexBasis: '32.333%',
   },
 }));
 
@@ -40,23 +41,21 @@ const SizeOptions = ({
   selectSizeHandle,
 }) => {
   const classes = useSizeOptionStyles();
-   
+
   const changeImageHandler = (idx, id, measure) => {
-   
     changeImage(idx);
     if (!isSetDefaultOptions) {
       setDefaultCombination({
-        size:id,
+        size: id,
         measure,
-        corner:"square",
-        material:"matte",
-        qty: "qty-150" 
+        corner: 'square',
+        material: 'matte',
+        qty: 'qty-150',
       });
     } else {
-      selectSizeHandle({id,measure});
+      selectSizeHandle({ id, measure });
     }
   };
-
   return (
     <div className={classes.sizeOption}>
       <Typography variant="h3" className={classes.title}>
@@ -64,30 +63,32 @@ const SizeOptions = ({
       </Typography>
 
       <RadioGroup className={classes.RadioGroup}>
-        {sizeOption.radioBtn.map((btn, idx) => {
-          return (
-            <FormControlLabel
-              key={btn.id}
-              className={classes.FormControlLabel}
-              value={btn.value}
-              control={
-                <Radio
-                  className={classes.Radio}
-                  onClick={changeImageHandler.bind(null, idx, btn.id,btn.value)}
-                />
-              }
-              label={
-                <RadioBtnLabel
-                  data={btn}
-                  isActive={selected.value === btn.id}
-                />
-              }
-            />
-          );
-        })}
+        {sizeOption.radioBtn.map((btn, idx) => (
+          <FormControlLabel
+            key={btn.id}
+            className={classes.FormControlLabel}
+            value={btn.value}
+            control={
+              <Radio
+                className={classes.Radio}
+                onClick={changeImageHandler.bind(null, idx, btn.id, btn.value)}
+              />
+            }
+            label={
+              <RadioBtnLabel data={btn} isActive={selected.value === btn.id} />
+            }
+          />
+        ))}
       </RadioGroup>
     </div>
   );
 };
-
+SizeOptions.propTypes = {
+  sizeOption: PropTypes.object,
+  setDefaultCombination: PropTypes.func,
+  isSetDefaultOptions: PropTypes.bool,
+  changeImage: PropTypes.func,
+  selectedElementSize: PropTypes.object,
+  selectSizeHandle: PropTypes.func,
+};
 export default SizeOptions;

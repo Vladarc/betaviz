@@ -1,7 +1,5 @@
-export const findProps = (state, path, action) => {
-    return state
-        .getIn(path)
-        .toJSON()
-        .find((el) => el.id === action);
-};
-
+export const findProps = (state, path, action) =>
+  state
+    .getIn(path)
+    .toJSON()
+    .find((el) => el.id === action);
