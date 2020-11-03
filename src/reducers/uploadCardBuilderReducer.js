@@ -10,10 +10,10 @@ export const uploadCardBuilderReducer = (
 ) => {
   switch (action.type) {
     case SET_UPLOAD_IMAGE_STEP:
-      return state;
+      return state.set('step', action.payload);
 
     case SET_FRONT_IMAGE_URL:
-      return state;
+      return state.set('frontImageUrl', action.payload);
 
     default:
       return state;

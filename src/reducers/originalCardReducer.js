@@ -19,13 +19,6 @@ export const originalCardReducer = (
 ) => {
   switch (action.type) {
     case CHANGE_IMAGE:
-      // const imageForReplace = state.getIn([
-      //   'sizeOption',
-      //   'radioBtn',
-      //   action.payload,
-      //   'previewImage',
-      // ])
-
       return state
         .setIn(
           ['productImage', 'previewImage'],
@@ -40,13 +33,6 @@ export const originalCardReducer = (
         .setIn(['productImage', 'isVisibale'], true);
 
     case RESET_ORIGINAL_VALUES:
-      // const defaultSelectValue = Map({
-      //   size: { value: '' },
-      //   material: { value: '' },
-      //   corner: { value: '' },
-      //   qty: { value: 'qty-150' },
-      //   price: {},
-      // });
       return state
         .setIn(['productImage'], {
           isVisibale: false,
@@ -78,11 +64,6 @@ export const originalCardReducer = (
         );
 
     case SELECT_QTY_HANDLE:
-      // const { qty, packPrice } = findProps(
-      //   state,
-      //   ['quanTityTable', 'tableBody'],
-      //   action.payload,
-      // )
       return state
         .setIn(['selectedElements', 'qty'], { value: action.payload })
 
@@ -97,11 +78,6 @@ export const originalCardReducer = (
         );
 
     case SELECT_CORNER_HANDLE:
-      // const { title: cornerTitle } = findProps(
-      //   state,
-      //   ['chooseCorners'],
-      //   action.payload,
-      // );
       return state
         .setIn(['selectedElements', 'corner'], { value: action.payload })
         .setIn(
@@ -110,11 +86,6 @@ export const originalCardReducer = (
         );
 
     case SELECT_MATERIAL_HANDLE:
-      // const { title: materialtitle } = findProps(
-      //   state,
-      //   ['chooseMaterial'],
-      //   action.payload,
-      // );
       return state
         .setIn(['selectedElements', 'material'], { value: action.payload })
         .setIn(
@@ -123,11 +94,6 @@ export const originalCardReducer = (
         );
 
     case SELECT_SIZE_HANDLE:
-      // const { title: sizeTitle } = findProps(
-      //   state,
-      //   ['sizeOption', 'radioBtn'],
-      //   action.payload.id
-      // );
       return state
         .setIn(['selectedElements', 'size'], {
           value: action.payload.id,
@@ -139,17 +105,6 @@ export const originalCardReducer = (
         );
 
     case SELECT_DEFAULT_COMBINATION:
-      // const getPriceAndQty = findProps(
-      //   state,
-      //   ['quanTityTable', 'tableBody'],
-      //   action.payload.qty
-      // )
-      // const getImageForSelectedSize = findProps(
-      //   state,
-      //   ['sizeOption', 'radioBtn'],
-      //   action.payload.size
-      // );
-
       return state
         .setIn(['selectedElements', 'size'], {
           value: action.payload.size,

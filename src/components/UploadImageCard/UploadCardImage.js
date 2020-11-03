@@ -6,7 +6,7 @@ import UploadImage from '../../image/upload-card.jpg';
 
 const UploadCardImage = () => (
   <div className="upload-design">
-    <NavLink className="upload-design__wrraper" to="/card_builder">
+    <NavLink className="upload-design__wrapper" to="/card_builder">
       <Image src={UploadImage} className="upload-design__image" />
     </NavLink>
 

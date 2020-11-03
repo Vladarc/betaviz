@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { ReactComponent as US } from '../../../image/usa.svg';
 import { ReactComponent as Search } from '../../../image/search.svg';
 import { ReactComponent as Cart } from '../../../image/cart.svg';
+import { ReactComponent as Upload } from '../../../image/upload.svg';
 
 const us = <US />;
 const search = <Search />;
 const cart = <Cart />;
+const upload = <Upload />;
 
 const getPath = (name) => {
   switch (name) {
@@ -16,6 +18,8 @@ const getPath = (name) => {
       return [search, '0 0 512 512', 'http://www.w3.org/2000/svg'];
     case 'cart':
       return [cart, '0 0 511.343 511.343', 'http://www.w3.org/2000/svg'];
+    case 'upload':
+      return [upload, '0 0 480.24 480.24', 'http://www.w3.org/2000/svg'];
     default:
       return [];
   }

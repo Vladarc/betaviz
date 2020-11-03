@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../../Header/HeaderContainer';
 import Layout from '../Layout/Layout';
 
-const MainContentWrraper = (props) => {
+const MainContentWrapper = (props) => {
   const Main = props.component;
 
   return (
@@ -15,8 +15,8 @@ const MainContentWrraper = (props) => {
     </>
   );
 };
-MainContentWrraper.propTypes = {
+MainContentWrapper.propTypes = {
   component: PropTypes.elementType,
   isVisibleHeader: PropTypes.bool,
 };
-export default MainContentWrraper;
+export default MainContentWrapper;
