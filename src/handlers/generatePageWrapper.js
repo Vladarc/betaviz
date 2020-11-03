@@ -1,5 +1,5 @@
 import React from 'react';
-import PageWrapper from '../components/hoc/MainContentWrraper/MainContentWrraper';
+import PageWrapper from '../components/hoc/MainContentWrapper/MainContentWrapper';
 
 function generatePageWrapper(initProps) {
   // eslint-disable-next-line react/display-name

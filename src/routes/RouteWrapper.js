@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import { toJS } from '../components/hoc/toJs/toJs';
 
-const RouteWrraper = ({
+const RouteWrapper = ({
   component: Component,
   isPrivate,
   isSelectOptions,
@@ -20,9 +20,9 @@ const RouteWrraper = ({
 const mapStateToProps = (state) => ({
   isSelectOptions: state.getIn(['orderInformationReducer', 'optionsSelected']),
 });
-RouteWrraper.propTypes = {
+RouteWrapper.propTypes = {
   component: PropTypes.any,
   isPrivate: PropTypes.any,
   isSelectOptions: PropTypes.any,
 };
-export default connect(mapStateToProps)(toJS(RouteWrraper));
+export default connect(mapStateToProps)(toJS(RouteWrapper));

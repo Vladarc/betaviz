@@ -13,6 +13,9 @@ const CustomDesignBuilderContainer = (props) => (
 
 const mapStateToProps = (state) => ({
   step: state.getIn(['uploadCardBuilderReducer', 'step']),
+  frontImgUrl: state.getIn(['uploadCardBuilderReducer', 'frontImageUrl']),
+  orientation: state.getIn(['uploadCardBuilderReducer', 'orientation']),
+  orderInfo: state.getIn(['orderInformationReducer', 'order']),
 });
 
 const mapDispatchToProps = (dispatch) => ({

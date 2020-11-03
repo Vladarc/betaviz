@@ -4,7 +4,7 @@ import HomePageRoute from './homePageRoutes';
 import OriginalCardRoute from './originalCardRoutes';
 import CustomDesignBuilderRoute from './customDesignBuilderRoutes';
 import CardTemplatesRoute from './cardTemplatesRoutes';
-import Route from './RouteWrraper';
+import Route from './RouteWrapper';
 
 const Routes = () => (
   <Switch>

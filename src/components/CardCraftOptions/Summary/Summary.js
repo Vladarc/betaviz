@@ -21,7 +21,7 @@ const useStyles = makeStyles({
       fontWeight: 700,
     },
   },
-  wrraper: {
+  wrapper: {
     margin: '20px 0',
   },
 });
@@ -30,7 +30,7 @@ export const Summary = ({ orderInfo }) => {
   const classes = useStyles();
   const { header, body } = orderInfo.tableValues;
   return (
-    <div className={classes.wrraper}>
+    <div className={classes.wrapper}>
       <TableContainer component={Paper}>
         <Table className={classes.root} aria-label="simple table">
           <TableHead>

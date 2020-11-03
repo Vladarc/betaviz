@@ -15,7 +15,7 @@ const BuilderNameField = () => {
   return (
     <>
       <div className="product-name">
-        <div className="product-name__wrraper">
+        <div className="product-name__wrapper">
           <input
             type="text"
             className="product-name__field"
