@@ -1,79 +1,79 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import '../../styles/Header.scss';
-import Container from '@material-ui/core/Container';
-import { Link } from 'react-router-dom';
-import Logo from '../../image/logo.jpg';
-import { Image } from '../UI/Image/Image';
-import { Ulitem } from '../UI/List/ListUI';
-import { UL } from '../UI/Ulwrap/Ulcontainer';
-import { SerchInput } from '../Search/SearchInput';
-import NavBar from './NavBar/NavBarContainer';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import { Container } from '@material-ui/core';
+import HeaderDrawer from '../Drawer/Drawer';
 
-const Header = ({
-  hoverTogglHandler,
-  headerLinks,
-  languagesList,
-  langSelectClasses,
-}) => {
-  const OpenListHoverHandler = () => hoverTogglHandler(true);
-  const CloseListHoverHandler = () => hoverTogglHandler(false);
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  label: {
+    width: '35px',
+    height: '35px',
+    fill: '#fff',
+  },
+  title: {
+    flexGrow: 1,
+  },
+  loginBtn: {
+    fontSize: '1.6rem',
+  },
+  homeLink: {
+    fontSize: '1.6rem',
+    color: '#fff',
+    textDecoration: 'none',
+  },
+}));
+
+export default function ButtonAppBar() {
+  const classes = useStyles();
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+    setOpenDrawer(open);
+  };
+
   return (
-    <header className="header">
-      <Container maxWidth="lg">
-        <div className="header__wrapper">
-          <div className="header__logo_wrap">
-            <Link to="/">
-              <Image src={Logo} alt="Logo" className="header__logo" />
-            </Link>
-          </div>
-          <div className="nav-wrapper">
-            <UL className="link-list">
-              {headerLinks.map((link, index) => {
-                const classesAndAttributes = [
-                  'link-list__item',
-                  link.className ? link.className : null,
-                  link.type ? link.type : null,
-                  link.icon
-                    ? `${'link-list__item'}--${link.img.className}`
-                    : null,
-                ];
-
-                return (
-                  <Ulitem
-                    languagesList={
-                      link.type === 'lang'
-                        ? [languagesList, langSelectClasses]
-                        : null
-                    }
-                    mouseEnter={
-                      link.type === 'lang' ? OpenListHoverHandler : false
-                    }
-                    mouseLeave={
-                      link.type === 'lang' ? CloseListHoverHandler : false
-                    }
-                    isActive={langSelectClasses.isOpen}
-                    key={index}
-                    isAdditionalContent={link.icon}
-                    svg={link.img}
-                    text={link.title}
-                    NameOfClasses={classesAndAttributes}
-                  />
-                );
-              })}
-            </UL>
-            <SerchInput className="header__serch-field" />
-          </div>
-        </div>
-        <NavBar />
-      </Container>
-    </header>
+    <>
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Container maxWidth="lg">
+            <Toolbar>
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                aria-label="menu"
+                onClick={toggleDrawer(true)}
+              >
+                <MenuIcon className={classes.label} />
+              </IconButton>
+              <Typography variant="h6" className={classes.title}>
+                MOO
+              </Typography>
+              <Button color="inherit" className={classes.loginBtn}>
+                Login
+              </Button>
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </div>
+      <HeaderDrawer drawerState={openDrawer} toggleHandler={toggleDrawer} />
+    </>
   );
-};
-Header.propTypes = {
-  hoverTogglHandler: PropTypes.func,
-  headerLinks: PropTypes.array,
-  languagesList: PropTypes.array,
-  langSelectClasses: PropTypes.object,
-};
-export default Header;
+}

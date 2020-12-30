@@ -1,41 +1,65 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Canvas from '../CanvasImgRedactor/CanvasRedactor';
+import CanvasLandscape from '../CanvasImgRedactor/CanvasRedactorLandscape';
+import CanvasPortrait from '../CanvasImgRedactor/CanvasRedactorPortrait';
 import '../../styles/CardRedactorStyles.scss';
+import UtilityBar from '../UtilityBar/UtilityBar';
 
 const FrontCardRedactor = (props) => {
-  let { currentOrientation } = props.orientation;
-  let { value } = props.orderInfo.corner;
-
+  console.log(props.updateFrontCoord);
   const cls = [
     'image-redactor__indent',
-    value === 'rounded' ? 'rounded-corner' : '',
+    props.orderInfo.corner.value === 'rounded' ? 'rounded-corner' : '',
+    props.orientation.currentOrientation === 'portrait' ? 'front-portrait' : '',
   ];
 
-  const canvasRef = useRef();
   return (
-    <div className="edit-workspace">
-      <div className="edit-workspace__container">
-        <div className="image-redactor">
-          <div className={cls.join(' ')}>
-            <Canvas
-              ref={canvasRef}
-              id="front-canvas"
-              ImgUrl={props.frontImgUrl}
-              setImageURL={props.setFrontImageURL}
-              orientation={props.orientation[currentOrientation]}
-            />
+    <>
+      <div className="edit-workspace">
+        <div className="edit-workspace__container">
+          <div className="image-redactor">
+            <div className={cls.join(' ')}>
+              {props.orientation.currentOrientation === 'landscape' ? (
+                <CanvasLandscape
+                  ImgUrl={props.frontImgUrl}
+                  setImageURL={props.setFrontImageURL}
+                  orientation={props.orientation}
+                  setImageCoordinates={props.setFrontImgCoord}
+                  defaultImageCoord={props.frontDefaultCoord}
+                />
+              ) : (
+                <CanvasPortrait
+                  ImgUrl={props.frontImgUrl}
+                  setImageURL={props.setFrontImageURL}
+                  orientation={props.orientation}
+                  setImageCoordinates={props.setFrontImgCoord}
+                  defaultImageCoord={props.frontDefaultCoord}
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <UtilityBar
+        setNewCanvasOrientation={props.setNewCanvasOrientation}
+        orientation={props.orientation.currentOrientation}
+        corners={props.orderInfo.corner.value}
+        setNewCorner={props.setNewCornerValue}
+        updateCanvasCoord={props.updateFrontCoord}
+      />
+    </>
   );
 };
 FrontCardRedactor.propTypes = {
+  setFrontImgCoord: PropTypes.func,
+  frontDefaultCoord: PropTypes.object,
+  updateFrontCoord: PropTypes.func,
   orderInfo: PropTypes.object,
   currentOrientation: PropTypes.string,
   orientation: PropTypes.object,
   frontImgUrl: PropTypes.string,
   setFrontImageURL: PropTypes.func,
+  setNewCornerValue: PropTypes.func,
+  setNewCanvasOrientation: PropTypes.func,
 };
 export default FrontCardRedactor;
