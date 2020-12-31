@@ -91,17 +91,7 @@ const originalCardState = Map({
   quanTityTable: Map({
     header: List(['Quantity', 'Price per card', 'Pack price']),
 
-    tableBody: List([
-      { id: 'qty-50', qty: '50', price: '$0.40', packPrice: '$19.99' },
-      { id: 'qty-100', qty: '100', price: '$0.40', packPrice: '$39.98' },
-      { id: 'qty-150', qty: '150', price: '$0.40', packPrice: '$59.97' },
-      { id: 'qty-200', qty: '200', price: '$0.35', packPrice: '$69.99 ' },
-      { id: 'qty-400', qty: '400', price: '$0.30', packPrice: '$119.00' },
-      { id: 'qty-600', qty: '600', price: '$0.25', packPrice: '$150.00' },
-      { id: 'qty-800', qty: '800', price: '$0.25', packPrice: '$300.00' },
-      { id: 'qty-900', qty: '800', price: '$0.25', packPrice: '$2500.00' },
-      { id: 'qty-1000', qty: '800', price: '$0.25', packPrice: '$400.00' },
-    ]),
+    tableBody: List([]),
   }),
   selectedElements: Map({
     size: { value: '' },

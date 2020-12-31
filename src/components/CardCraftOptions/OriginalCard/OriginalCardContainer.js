@@ -10,6 +10,8 @@ import {
   selectMaterialHandle,
   selectSizeHandle,
   selectDefaultCombination,
+  fetchPriceAndQtyData,
+ 
 } from '../../../actions/originalCardsActions';
 import { setCraftOptions } from '../../../actions/orderInformationActions';
 
@@ -43,6 +45,7 @@ const mapDispatchToProps = (dispatch) => ({
   setDefaultCombination: (payload) =>
     dispatch(selectDefaultCombination(payload)),
   setCraftOptions: (payload) => dispatch(setCraftOptions(payload)),
+  fetchPriceAndQtyData: () => dispatch(fetchPriceAndQtyData())
 });
 
 export default connect(

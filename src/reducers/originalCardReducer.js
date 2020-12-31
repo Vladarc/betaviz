@@ -8,6 +8,7 @@ import {
   SELECT_SIZE_HANDLE,
   SELECT_DEFAULT_COMBINATION,
   RESET_ORIGINAL_VALUES,
+  FETCH_PRICE_DATA_SUCCESS
 } from '../constants/originalCardConstants';
 import { capitalize } from '../handlers/сapitalizeFunc.js';
 import { findProps } from '../handlers/findPropsHandle';
@@ -164,6 +165,9 @@ export const originalCardReducer = (
           ])
         )
         .setIn(['isSetDefaultOptions'], true);
+
+    case FETCH_PRICE_DATA_SUCCESS:
+          return state.setIn(['quanTityTable', 'tableBody'], action.price.data[0].values);
 
     default:
       return state;

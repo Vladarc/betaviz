@@ -5,6 +5,8 @@ import {
   SELECT_MATERIAL_HANDLE,
   SELECT_SIZE_HANDLE,
   SELECT_DEFAULT_COMBINATION,
+  FETCH_PRICE_DATA,
+  FETCH_PRICE_DATA_SUCCESS
 } from '../constants/originalCardConstants';
 
 export const changeImage = (payload) => ({
@@ -32,3 +34,12 @@ export const selectDefaultCombination = (payload) => ({
   type: SELECT_DEFAULT_COMBINATION,
   payload,
 });
+
+export const fetchPriceAndQtyData = () => ({
+  type: FETCH_PRICE_DATA,
+ });
+export const fetchPriceAndQtyDataSuccess = (price) => ({
+  type: FETCH_PRICE_DATA_SUCCESS,
+  price
+ });
+ 

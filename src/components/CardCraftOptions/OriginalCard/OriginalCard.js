@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import '../../../styles/OriginalCard.scss';
 import { Button, makeStyles } from '@material-ui/core';
@@ -12,6 +12,7 @@ import SelectCorners from '../SelectCorners/SelectCorners';
 import QuantityTable from '../QuantityTable/QuantityTable';
 import { Summary } from '../Summary/Summary';
 
+
 const useOriginCardStyles = makeStyles(() => ({
   root: {
     padding: '7px 0',
@@ -21,6 +22,10 @@ const useOriginCardStyles = makeStyles(() => ({
 
 const OriginalCard = (props) => {
   const classes = useOriginCardStyles();
+  
+  useEffect(() =>{
+    props.fetchPriceAndQtyData();
+   }, []);
 
   const setOrderInfo = () => {
     const price = props.summaryOrderInfo.tableValues.body[6].value;
