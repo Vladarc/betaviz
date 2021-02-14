@@ -1,0 +1,80 @@
+@mixin font($ff: inherit, $fz: inherit, $fc: inherit, $fw: 400, $lh: 1.6) {
+  font-family: $ff;
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: $fw;
+  color: $fc;
+}
+
+@mixin posA($top: 50%, $left: 50%, $delta_x: -50%, $delta_y: -50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($delta_x, $delta_y);
+}
+// transition 
+@mixin tr() {
+  transition: all 0.4s ease-in;
+}
+// hover 
+@mixin hover() {
+  @include tr;
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+// animation start 
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+
+
+
+// position 
+@mixin center($position) {
+    position: absolute;
+    
+    @if $position == 'vertical' {
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    @else if $position == 'horizontal' {
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translate(-50%);
+    }
+    @else if $position == 'both' {
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }

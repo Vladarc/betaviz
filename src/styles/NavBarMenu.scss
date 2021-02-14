@@ -1,0 +1,55 @@
+@import "./mixins";
+@import "./variables";
+
+.nav-menu {
+  padding: 20px;
+
+  position: absolute;
+  top: 105%;
+  right: 0;
+  left: 0;
+
+  width: 100%;
+
+  min-height: 400px;
+
+  
+  z-index: -10;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  background-color: $white;
+  &.isOpened {
+    z-index: 10;
+    opacity: 1;
+    pointer-events: visible;
+    visibility:visible;
+    transition: opacity 0.2s ease-in;
+    
+  }
+}
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+.grid-menu__item {
+  min-height: 400px;
+}
+.grid-menu__item:not(:first-child) {
+  background-color: $green;
+}
+.grid-menu__item:not(:first-child) {
+  grid-column-start: 3;
+}
+
+.nav-main {
+  &__item {
+    padding: 1em 0.6em;
+    position: relative;
+  }
+  &__icon {
+    @include posA($top: 50%, $left: 45%, $delta_x: -50%, $delta_y: -50%);
+  }
+}

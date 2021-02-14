@@ -1,0 +1,18 @@
+
+@import "./variables";
+@import "./_mixins";
+
+.original-card{
+    margin-top: 20px;
+&__images{
+    padding-right: 25px;
+}
+&__options{
+    padding-left: 25px;
+}
+
+}
+.position-sticky{
+    position: sticky;
+    top:1em;
+}

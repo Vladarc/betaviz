@@ -1,0 +1,42 @@
+@import './Normalize';
+@import './mixins';
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+.body{
+  &--card-builder{
+    max-height: 100vh;
+    overflow: hidden;
+  }
+}
+
+img{
+    max-width: 100%;
+}
+ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+a,
+button{
+  @include tr();
+}
+.row{
+    display: flex;
+}
+.col{
+  width: 100%;
+  &--1-6{
+    max-width: 600px;
+  }
+
+}
